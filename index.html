@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#171512">
+  <title>متجر الفخامة للعود والبخور</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+<header class="hero">
+  <nav class="topbar">
+    <a class="brand" href="index.html">الفخامة</a>
+    <a class="admin-link" href="admin.html">إدارة المتجر</a>
+  </nav>
+  <div class="hero-copy">
+    <p class="eyebrow">عبق يليق بك</p>
+    <h1>متجر الفخامة للعود والبخور</h1>
+    <p>أرقى تشكيلة عود وبخور وإكسسوارات في ليبيا</p>
+    <a class="button gold" href="#products">تصفّح المنتجات</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section-head">
+    <div>
+      <p class="eyebrow">اختياراتنا</p>
+      <h2>منتجاتنا</h2>
+    </div>
+    <div id="categories" class="categories" aria-label="تصنيفات المنتجات"></div>
+  </section>
+  <p id="status" class="status" role="status">جارٍ تحميل المنتجات...</p>
+  <section id="products" class="product-grid"></section>
+
+  <section class="order-panel">
+    <p class="eyebrow">بخطوات بسيطة</p>
+    <h2>كيف تطلب؟</h2>
+    <div class="steps">
+      <div><b>01</b><h3>اختر المنتج</h3><p>تصفّح المنتجات والأسعار.</p></div>
+      <div><b>02</b><h3>راسلنا</h3><p>اضغط زر الطلب لفتح واتساب برسالة جاهزة.</p></div>
+      <div><b>03</b><h3>أكّد التفاصيل</h3><p>اتفق معنا على التوصيل والدفع.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>متجر الفخامة</strong>
+  <p>للطلب والاستفسار: <a href="https://wa.me/218925686579" target="_blank" rel="noopener">0925686579</a></p>
+  <small>© <span id="year"></span> متجر الفخامة — جميع الحقوق محفوظة</small>
+</footer>
+</body>
+</html>
