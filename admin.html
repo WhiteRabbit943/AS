@@ -6,59 +6,93 @@
   <meta name="theme-color" content="#171512">
   <title>إدارة المتجر | الفخامة</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="config.js"></script>
-  <script defer src="admin.js"></script>
+  <script type="module" src="admin.js"></script>
 </head>
 <body class="admin-body">
 <header class="admin-header">
   <a class="brand" href="index.html">الفخامة</a>
   <a class="admin-link" href="index.html">عرض المتجر</a>
 </header>
+
 <main class="admin-wrap">
   <section id="loginBox" class="panel narrow">
     <p class="eyebrow">دخول المسؤول</p>
     <h1>إدارة المتجر</h1>
-    <p class="muted">سجّل الدخول بالبريد وكلمة المرور التي أنشأتها في Supabase.</p>
+    <p class="muted">سجّل الدخول باستخدام حساب Google المصرح له بإدارة المتجر.</p>
+
     <form id="loginForm">
-      <label>البريد الإلكتروني<input id="email" type="email" autocomplete="username" required></label>
-      <label>كلمة المرور<input id="password" type="password" autocomplete="current-password" required></label>
-      <button class="button gold" type="submit">تسجيل الدخول</button>
+      <button class="button gold" type="submit">
+        تسجيل الدخول باستخدام Google
+      </button>
     </form>
+
     <p id="loginMessage" class="status" role="status"></p>
   </section>
 
   <section id="dashboard" hidden>
     <div class="dashboard-title">
-      <div><p class="eyebrow">لوحة التحكم</p><h1>إدارة المنتجات والتصنيفات</h1></div>
-      <button id="logoutBtn" class="button outline" type="button">تسجيل الخروج</button>
+      <div>
+        <p class="eyebrow">لوحة التحكم</p>
+        <h1>إدارة المنتجات والتصنيفات</h1>
+      </div>
+      <button id="logoutBtn" class="button outline" type="button">
+        تسجيل الخروج
+      </button>
     </div>
+
     <p id="adminMessage" class="status" role="status"></p>
 
     <section class="panel">
       <h2 id="productFormTitle">إضافة منتج</h2>
       <form id="productForm" class="form-grid">
         <input id="productId" type="hidden">
-        <label>اسم المنتج<input id="productName" maxlength="120" required></label>
-        <label>السعر بالدينار الليبي<input id="productPrice" type="number" min="0" step="0.01" required></label>
-        <label>التصنيف
+
+        <label>
+          اسم المنتج
+          <input id="productName" maxlength="120" required>
+        </label>
+
+        <label>
+          السعر بالدينار الليبي
+          <input id="productPrice" type="number" min="0" step="0.01" required>
+        </label>
+
+        <label>
+          التصنيف
           <select id="productCategory" required></select>
         </label>
-        <label>صورة المنتج<input id="productImage" type="file" accept="image/*"></label>
-        <label class="full">وصف المنتج<textarea id="productDescription" rows="3" maxlength="1000"></textarea></label>
-        <label class="checkbox-label"><input id="productFeatured" type="checkbox"> منتج مميز</label>
+
+        <label>
+          رابط صورة المنتج
+          <input id="productImage" type="url" placeholder="https://example.com/image.jpg">
+        </label>
+
+        <label class="full">
+          وصف المنتج
+          <textarea id="productDescription" rows="3" maxlength="1000"></textarea>
+        </label>
+
+        <label class="checkbox-label">
+          <input id="productFeatured" type="checkbox">
+          منتج مميز
+        </label>
+
         <div class="form-actions full">
           <button class="button gold" type="submit">حفظ المنتج</button>
           <button id="cancelEdit" class="button outline" type="button" hidden>إلغاء التعديل</button>
         </div>
       </form>
-      <p class="muted small">الصور تُرفع إلى مساحة التخزين، والمنتجات تُحفظ في قاعدة البيانات.</p>
+
+      <p class="muted small">أدخل رابط الصورة مباشرة؛ لا تحتاج إلى تفعيل خدمة تخزين الصور.</p>
     </section>
 
     <section class="panel">
       <h2>إدارة التصنيفات</h2>
       <form id="categoryForm" class="inline-form">
-        <label class="grow">اسم التصنيف الجديد<input id="categoryName" maxlength="80" required></label>
+        <label class="grow">
+          اسم التصنيف الجديد
+          <input id="categoryName" maxlength="80" required>
+        </label>
         <button class="button gold" type="submit">إضافة تصنيف</button>
       </form>
       <div id="categoryAdminList" class="manage-list"></div>
@@ -70,6 +104,9 @@
     </section>
   </section>
 </main>
-<footer><small>لوحة الإدارة — لا تشارك بيانات الدخول مع أي شخص.</small></footer>
+
+<footer>
+  <small>لوحة الإدارة — لا تشارك بيانات الدخول مع أي شخص.</small>
+</footer>
 </body>
 </html>
