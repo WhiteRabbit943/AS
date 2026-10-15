@@ -98,7 +98,7 @@ function renderProducts() {
         <div class="product-bottom">
           <span class="price">${price.toLocaleString("ar-LY")} د.ل</span>
           <a class="whatsapp"
-            href="https://wa.me/218925686579?text=${message}"
+        href="https://wa.me/218910665708?text=${message}"
             target="_blank" rel="noopener noreferrer">اطلب عبر واتساب</a>
         </div>
       </div>
